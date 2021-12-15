@@ -87,3 +87,8 @@ li {
   font-size: 18px;
   font-weight: 400;
 }
+
+.linkGit {
+    color: #f67280;
+    text-decoration: none;
+}
