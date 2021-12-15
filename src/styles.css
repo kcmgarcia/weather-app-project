@@ -1,0 +1,89 @@
+body {
+  background-color: #fafafa;
+  margin: 20px 0px 0px 30px;
+  max-width: 800px;
+  font-family: "Dosis", sans-serif;
+}
+
+h1 {
+  color: #f67280;
+  font-weight: 100;
+  font-size: 20px;
+}
+
+input,
+button {
+  color: #f67280;
+  border-radius: 3px;
+  background-color: #fafafa;
+  border-color: #f67280;
+  border: solid;
+  transition: 200ms ease-in-out;
+}
+
+input:hover,
+button:hover {
+  color: #c06c84;
+  border: solid;
+  border-color: #c06c84;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+.row {
+  color: #f67280;
+  opacity: 80%;
+  max-width: 60%;
+}
+
+.header {
+  color: #f67280;
+}
+
+.place {
+  color: #c06c84;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.header {
+  color: #c06c84;
+  font-weight: 500;
+  margin: 100px, 0px, 0px, 100px;
+}
+
+.day {
+  font-weight: 600;
+}
+
+.degrees {
+  font-weight: 500;
+  font-size: 40px;
+  color: #c06c84;
+}
+
+.temp {
+  color: #f67280;
+  text-decoration: none;
+}
+
+.temp:hover {
+  color: #c06c84;
+}
+
+.form {
+  color: #f67280;
+}
+
+.searchButton .currentLocationButton {
+  color: #f67280;
+  font-size: 10px;
+}
+
+.details {
+  font-size: 18px;
+  font-weight: 400;
+}
