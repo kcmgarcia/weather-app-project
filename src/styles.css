@@ -6,26 +6,26 @@ body {
 }
 
 h1 {
-  color: #f67280;
+  color: #db5f29;
   font-weight: 100;
   font-size: 20px;
 }
 
 input,
 button {
-  color: #f67280;
+  color: #db5f29;
   border-radius: 3px;
   background-color: #fafafa;
-  border-color: #f67280;
+  border-color: #db5f29;
   border: solid;
   transition: 200ms ease-in-out;
 }
 
 input:hover,
 button:hover {
-  color: #c06c84;
+  color: #876464;
   border: solid;
-  border-color: #c06c84;
+  border-color: #876464;
   cursor: pointer;
 }
 
@@ -34,23 +34,19 @@ li {
 }
 
 .row {
-  color: #f67280;
+  color: #db5f29;
   opacity: 80%;
   max-width: 60%;
 }
 
-.header {
-  color: #f67280;
-}
-
 .place {
-  color: #c06c84;
+  color: #876464;
   font-size: 25px;
   font-weight: 400;
 }
 
 .header {
-  color: #c06c84;
+  color: #876464;
   font-weight: 500;
   margin: 100px, 0px, 0px, 100px;
 }
@@ -62,24 +58,24 @@ li {
 .degrees {
   font-weight: 500;
   font-size: 40px;
-  color: #c06c84;
+  color: #876464;
 }
 
 .temp {
-  color: #f67280;
+  color:#db5f29;
   text-decoration: none;
 }
 
 .temp:hover {
-  color: #c06c84;
+  color: #db5f29;
 }
 
 .form {
-  color: #f67280;
+  color: #db5f29;
 }
 
 .searchButton .currentLocationButton {
-  color: #f67280;
+  color: #db5f29;
   font-size: 10px;
 }
 
@@ -89,6 +85,6 @@ li {
 }
 
 .linkGit {
-    color: #f67280;
+    color: #ed9f66;
     text-decoration: none;
 }

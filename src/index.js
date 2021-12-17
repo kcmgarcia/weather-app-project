@@ -29,7 +29,11 @@ function displayWeather(response) {
   cityDislpayName.innerHTML = response.data.name;
   let temperatueDisplay = document.querySelector("#tempNumber");
   temperatueDisplay.innerHTML = Math.round(response.data.main.temp);
-  console.log(response);
+  let icon = document.querySelector("#weather-icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   document.querySelector("#max-temp").innerHTML = Math.round(
     response.data.main.temp_max
   );
@@ -43,10 +47,7 @@ function displayWeather(response) {
     response.data.wind.speed
   );
   document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
-  
-  let icon = document.querySelector("#weather-icon");
-  icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    response.data.weather[0].main; 
 }
 
 function searchDefault(city) {
