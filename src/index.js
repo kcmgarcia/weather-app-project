@@ -44,6 +44,9 @@ function displayWeather(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  
+  let icon = document.querySelector("#weather-icon");
+  icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function searchDefault(city) {
