@@ -24,6 +24,42 @@ function dateAndTime(date) {
   return `${today} ${hours}:${minutes}`;
 }
 
+function displayForecast(response) {
+  let forecast = document.querySelector("#upcoming-days-forecast");
+  let forecastElement = response.data.daily;
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thursday", "Friday", "Saturday"];
+  days.forEach(function (forecastDay) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-4">
+      <div class="forecast-days">
+        ${forecastDay}
+        <br />
+        02/11 15˚ 🌤
+        <br />
+        max ${forecastDay.temp.max}˚ | min ${forecastDay.temp.min}˚ 
+        <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="forecast">
+    </div>
+    </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
+function forecastUpcomingDays(coordinates) {
+  let units = "metric";
+  let apiKey = "c7fd5e424407c1c48c90ef23a84bc8d5";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=${units}&appid=${apiKey}`;
+  console.log(apiUrl);
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeather(response) {
   celsiusTemp = response.data.main.temp;
 
@@ -55,6 +91,7 @@ function displayWeather(response) {
     response.data.weather[0].main; 
 
   displayUpcomingDays();
+  forecastUpcomingDays(response.data.coord);
 }
 
 function searchDefault(city) {
@@ -100,36 +137,6 @@ function displayCelsiusTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#tempNumber");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
-}
-
-function displayUpcomingDays() {
-  let forecast = document.querySelector("#upcoming-days-forecast");
-  
-  let forecastHTML = `<div class="row">`;
-  let days = [
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  days.forEach(function(day) {
-    forecastHTML =
-      forecastHTML +
-      `
-    <div class="col-4">
-      <div class="forecast-days">
-        ${day}
-        <br />
-        02/11 15˚ 🌤
-        <br />
-        max 17˚ | min 15˚ 
-        <img src="#" alt="forecast">
-    </div>
-    </div>
-  `;
-  })
- 
-  forecastHTML = forecastHTML + `</div>`;
-  forecast.innerHTML = forecastHTML;
 }
 
 let celsiusTemp = null;
