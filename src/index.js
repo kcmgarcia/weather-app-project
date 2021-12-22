@@ -53,6 +53,8 @@ function displayWeather(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main; 
+
+  displayUpcomingDays();
 }
 
 function searchDefault(city) {
@@ -98,6 +100,36 @@ function displayCelsiusTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#tempNumber");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
+function displayUpcomingDays() {
+  let forecast = document.querySelector("#upcoming-days-forecast");
+  
+  let forecastHTML = `<div class="row">`;
+  let days = [
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  days.forEach(function(day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-4">
+      <div class="forecast-days">
+        ${day}
+        <br />
+        02/11 15˚ 🌤
+        <br />
+        max 17˚ | min 15˚ 
+        <img src="#" alt="forecast">
+    </div>
+    </div>
+  `;
+  })
+ 
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
 }
 
 let celsiusTemp = null;
