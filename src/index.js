@@ -25,30 +25,29 @@ function dateAndTime(date) {
 }
 
 function displayForecast(response) {
-  let forecast = document.querySelector("#upcoming-days-forecast");
-  let forecastElement = response.data.daily;
+  let forecastElement = document.querySelector("#upcoming-days-forecast");
+  let forecast = response.data.daily;
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Thursday", "Friday", "Saturday"];
-  days.forEach(function (forecastDay) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
     <div class="col-4">
       <div class="forecast-days">
-        ${forecastDay}
+        ${forecastDay.dt}
         <br />
         02/11 15˚ 🌤
         <br />
         max ${forecastDay.temp.max}˚ | min ${forecastDay.temp.min}˚ 
-        <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="forecast">
+        <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="forecast">
     </div>
     </div>
   `;
   });
 
   forecastHTML = forecastHTML + `</div>`;
-  forecast.innerHTML = forecastHTML;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function forecastUpcomingDays(coordinates) {
@@ -90,8 +89,7 @@ function displayWeather(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main; 
 
-  displayUpcomingDays();
-  forecastUpcomingDays(response.data.coord);
+  // forecastUpcomingDays(response.data.coord);
 }
 
 function searchDefault(city) {
